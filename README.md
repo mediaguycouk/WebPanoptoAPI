@@ -3,6 +3,10 @@ WebPanoptoAPI
 
 This site contains source code written by Graham Robinson for the Panopto API.
 
+You MUST edit web.config to update the endpoint from https://localhost to your
+server address (unless you are using your Panopto server and https://localhost
+is set up to work correctly).
+
 Information and tutorials on using the Panopto API, including all code available
 from this site are available on http://www.mediaguy.co.uk
 
