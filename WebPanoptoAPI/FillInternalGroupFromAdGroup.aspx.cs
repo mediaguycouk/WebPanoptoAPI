@@ -221,6 +221,8 @@ namespace WebPanoptoAPI
                     Guid panGroupGuid = new Guid(ddlInternalGroups.SelectedValue);
                     Group panGroup = userMgr.GetGroup(userAuthenticationInfo, panGroupGuid);
 
+                    //userMgr.RemoveMembersFromInternalGroup(userAuthenticationInfo, panGroupGuid);
+
                     userMgr.AddMembersToInternalGroup(userAuthenticationInfo, panGroup.Id, userList.ToArray());
                     lblAdSyncGroupProgress.Text += panGroup.Name + " was updated (id:" + panGroup.Id + ")<br/>\r\n";
                 }

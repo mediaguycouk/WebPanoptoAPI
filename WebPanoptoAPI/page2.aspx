@@ -11,13 +11,19 @@
     <h3>
         Work with folders</h3>
     <p>
-        Create folder hierarchy from folder names</p>
+        <a href="CreateFolderStructureFromRootFolders.aspx">Create folder hierarchy from folder names</a></p>
     <p>
-        Move all sessions from one folder to another</p>
+        <a href="MoveAllSessionsToNewFolder.aspx">Move all sessions from one folder to another</a></p>
+    <p>
+        <a href="MakeFolders.aspx">Make folders from a list</a></p>
     <h3>
         Work with sessions</h3>
     <p>
         &nbsp;</p>
+    <h3>
+        Working with remote recorders</h3>
+    <p>
+        <a href="AmendRecurringRecording.aspx">Amend a recurring recorrding</a></p>
     <h3>
         Work with users</h3>
     <p>

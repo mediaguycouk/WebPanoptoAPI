@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="AuthenticationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthenticationInfo" nillable="true" type="tns:AuthenticationInfo" />
+  <xs:complexType name="UserAccessDetails">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FoldersWithCreatorAccess" nillable="true" type="q1:ArrayOfguid" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FoldersWithViewerAccess" nillable="true" type="q2:ArrayOfguid" />
+      <xs:element minOccurs="0" name="GroupMembershipAccess" nillable="true" type="tns:ArrayOfGroupAccessDetails" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SessionsWithViewerAccess" nillable="true" type="q3:ArrayOfguid" />
+      <xs:element minOccurs="0" name="SystemRole" type="tns:SystemRole" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAccessDetails" nillable="true" type="tns:UserAccessDetails" />
+  <xs:complexType name="ArrayOfGroupAccessDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupAccessDetails" nillable="true" type="tns:GroupAccessDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupAccessDetails" nillable="true" type="tns:ArrayOfGroupAccessDetails" />
+  <xs:complexType name="GroupAccessDetails">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FoldersWithCreatorAccess" nillable="true" type="q4:ArrayOfguid" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FoldersWithViewerAccess" nillable="true" type="q5:ArrayOfguid" />
+      <xs:element minOccurs="0" name="GroupId" type="ser:guid" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SessionsWithViewerAccess" nillable="true" type="q6:ArrayOfguid" />
+      <xs:element minOccurs="0" name="SystemRole" type="tns:SystemRole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupAccessDetails" nillable="true" type="tns:GroupAccessDetails" />
+  <xs:simpleType name="SystemRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Videographer" />
+      <xs:enumeration value="Admin" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SystemRole" nillable="true" type="tns:SystemRole" />
+  <xs:complexType name="SessionAccessDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolderAccess" nillable="true" type="tns:FolderAccessDetails" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GroupsWithDirectViewerAccess" nillable="true" type="q7:ArrayOfguid" />
+      <xs:element minOccurs="0" name="InheritViewerAccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPublic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SessionId" type="ser:guid" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UsersWithDirectViewerAccess" nillable="true" type="q8:ArrayOfguid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionAccessDetails" nillable="true" type="tns:SessionAccessDetails" />
+  <xs:complexType name="FolderAccessDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FolderId" type="ser:guid" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GroupsWithCreatorAccess" nillable="true" type="q9:ArrayOfguid" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GroupsWithViewerAccess" nillable="true" type="q10:ArrayOfguid" />
+      <xs:element minOccurs="0" name="IsPublic" type="xs:boolean" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UsersWithCreatorAccess" nillable="true" type="q11:ArrayOfguid" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UsersWithViewerAccess" nillable="true" type="q12:ArrayOfguid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FolderAccessDetails" nillable="true" type="tns:FolderAccessDetails" />
+  <xs:simpleType name="AccessRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Creator" />
+      <xs:enumeration value="Viewer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccessRole" nillable="true" type="tns:AccessRole" />
+</xs:schema>

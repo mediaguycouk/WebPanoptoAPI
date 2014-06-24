@@ -303,3 +303,84 @@ div.accountInfo
     float: right;
     width: 150px;
 }
+.existlevel1 {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url('../images/existingdirectory.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.existlevel2 {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url('../images/existingdirectory.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.existlevel3 {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url('../images/existingdirectory.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-left: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.newlevel1 {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url('../images/newdirectory.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.newlevel2 {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url('../images/newdirectory.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.newlevel3 {
+    font-family: "Courier New", Courier, monospace;
+    background-image: url('../images/newdirectory.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    margin-left: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.acllevel1 {
+    font-size: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px;
+    margin: 2px 2px 2px 35px;
+    color: #808080;
+}
+.acllevel2 {
+    font-size: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px;
+    margin: 2px 2px 2px 75px;
+    color: #808080;
+}
+.acllevel3 {
+    font-size: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px;
+    margin: 2px 2px 2px 95px;
+    color: #808080;
+}

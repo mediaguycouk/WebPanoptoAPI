@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccessManagement" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IAccessManagement_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccessManagement_GetUserAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetUserAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetSelfUserAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSelfUserAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetSelfUserAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSelfUserAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetSessionAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetSessionAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetFolderAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFolderAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetFolderAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFolderAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetGroupAccessDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupAccessDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GetGroupAccessDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupAccessDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantUsersAccessToFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUsersAccessToFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantUsersAccessToFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUsersAccessToFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantUsersViewerAccessToSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUsersViewerAccessToSession" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantUsersViewerAccessToSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUsersViewerAccessToSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantGroupAccessToFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantGroupAccessToFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantGroupAccessToFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantGroupAccessToFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantGroupViewerAccessToSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantGroupViewerAccessToSession" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_GrantGroupViewerAccessToSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantGroupViewerAccessToSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_UpdateFolderIsPublic_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFolderIsPublic" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_UpdateFolderIsPublic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFolderIsPublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_UpdateSessionIsPublic_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSessionIsPublic" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_UpdateSessionIsPublic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSessionIsPublicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_UpdateSessionInheritViewerAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSessionInheritViewerAccess" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_UpdateSessionInheritViewerAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSessionInheritViewerAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeUsersAccessFromFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeUsersAccessFromFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeUsersAccessFromFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeUsersAccessFromFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeUsersViewerAccessFromSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeUsersViewerAccessFromSession" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeUsersViewerAccessFromSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeUsersViewerAccessFromSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeGroupAccessFromFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeGroupAccessFromFolder" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeGroupAccessFromFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeGroupAccessFromFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeGroupViewerAccessFromSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeGroupViewerAccessFromSession" />
+  </wsdl:message>
+  <wsdl:message name="IAccessManagement_RevokeGroupViewerAccessFromSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RevokeGroupViewerAccessFromSessionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccessManagement">
+    <wsdl:operation name="GetUserAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GetUserAccessDetails" message="tns:IAccessManagement_GetUserAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GetUserAccessDetailsResponse" message="tns:IAccessManagement_GetUserAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelfUserAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GetSelfUserAccessDetails" message="tns:IAccessManagement_GetSelfUserAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GetSelfUserAccessDetailsResponse" message="tns:IAccessManagement_GetSelfUserAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GetSessionAccessDetails" message="tns:IAccessManagement_GetSessionAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GetSessionAccessDetailsResponse" message="tns:IAccessManagement_GetSessionAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GetFolderAccessDetails" message="tns:IAccessManagement_GetFolderAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GetFolderAccessDetailsResponse" message="tns:IAccessManagement_GetFolderAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupAccessDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GetGroupAccessDetails" message="tns:IAccessManagement_GetGroupAccessDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GetGroupAccessDetailsResponse" message="tns:IAccessManagement_GetGroupAccessDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantUsersAccessToFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GrantUsersAccessToFolder" message="tns:IAccessManagement_GrantUsersAccessToFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GrantUsersAccessToFolderResponse" message="tns:IAccessManagement_GrantUsersAccessToFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantUsersViewerAccessToSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GrantUsersViewerAccessToSession" message="tns:IAccessManagement_GrantUsersViewerAccessToSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GrantUsersViewerAccessToSessionResponse" message="tns:IAccessManagement_GrantUsersViewerAccessToSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantGroupAccessToFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GrantGroupAccessToFolder" message="tns:IAccessManagement_GrantGroupAccessToFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GrantGroupAccessToFolderResponse" message="tns:IAccessManagement_GrantGroupAccessToFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantGroupViewerAccessToSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/GrantGroupViewerAccessToSession" message="tns:IAccessManagement_GrantGroupViewerAccessToSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/GrantGroupViewerAccessToSessionResponse" message="tns:IAccessManagement_GrantGroupViewerAccessToSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolderIsPublic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/UpdateFolderIsPublic" message="tns:IAccessManagement_UpdateFolderIsPublic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/UpdateFolderIsPublicResponse" message="tns:IAccessManagement_UpdateFolderIsPublic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionIsPublic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/UpdateSessionIsPublic" message="tns:IAccessManagement_UpdateSessionIsPublic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/UpdateSessionIsPublicResponse" message="tns:IAccessManagement_UpdateSessionIsPublic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionInheritViewerAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/UpdateSessionInheritViewerAccess" message="tns:IAccessManagement_UpdateSessionInheritViewerAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/UpdateSessionInheritViewerAccessResponse" message="tns:IAccessManagement_UpdateSessionInheritViewerAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeUsersAccessFromFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/RevokeUsersAccessFromFolder" message="tns:IAccessManagement_RevokeUsersAccessFromFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/RevokeUsersAccessFromFolderResponse" message="tns:IAccessManagement_RevokeUsersAccessFromFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeUsersViewerAccessFromSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/RevokeUsersViewerAccessFromSession" message="tns:IAccessManagement_RevokeUsersViewerAccessFromSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/RevokeUsersViewerAccessFromSessionResponse" message="tns:IAccessManagement_RevokeUsersViewerAccessFromSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeGroupAccessFromFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/RevokeGroupAccessFromFolder" message="tns:IAccessManagement_RevokeGroupAccessFromFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/RevokeGroupAccessFromFolderResponse" message="tns:IAccessManagement_RevokeGroupAccessFromFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RevokeGroupViewerAccessFromSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccessManagement/RevokeGroupViewerAccessFromSession" message="tns:IAccessManagement_RevokeGroupViewerAccessFromSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccessManagement/RevokeGroupViewerAccessFromSessionResponse" message="tns:IAccessManagement_RevokeGroupViewerAccessFromSession_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAccessManagement" type="tns:IAccessManagement">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IAccessManagement_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GetUserAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelfUserAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GetSelfUserAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GetSessionAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolderAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GetFolderAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupAccessDetails">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GetGroupAccessDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantUsersAccessToFolder">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GrantUsersAccessToFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantUsersViewerAccessToSession">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GrantUsersViewerAccessToSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantGroupAccessToFolder">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GrantGroupAccessToFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantGroupViewerAccessToSession">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/GrantGroupViewerAccessToSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolderIsPublic">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/UpdateFolderIsPublic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionIsPublic">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/UpdateSessionIsPublic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionInheritViewerAccess">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/UpdateSessionInheritViewerAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeUsersAccessFromFolder">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/RevokeUsersAccessFromFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeUsersViewerAccessFromSession">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/RevokeUsersViewerAccessFromSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeGroupAccessFromFolder">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/RevokeGroupAccessFromFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RevokeGroupViewerAccessFromSession">
+      <soap:operation soapAction="http://tempuri.org/IAccessManagement/RevokeGroupViewerAccessFromSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccessManagement">
+    <wsdl:port name="BasicHttpBinding_IAccessManagement" binding="tns:BasicHttpBinding_IAccessManagement">
+      <soap:address location="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

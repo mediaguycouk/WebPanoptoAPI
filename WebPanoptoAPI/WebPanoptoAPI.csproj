@@ -69,6 +69,61 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement.wsdl" />
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="AmendRecurringRecording.aspx" />
+    <Content Include="MakeFolders.aspx" />
+    <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.FolderAccessDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.GroupAccessDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.SessionAccessDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.UserAccessDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement.wsdl" />
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.ListRecordersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.RemoteRecorder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.ScheduledRecordingResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\PanoptoSessionManagement\configuration91.svcinfo" />
     <None Include="Service References\PanoptoSessionManagement\configuration.svcinfo" />
     <None Include="Service References\PanoptoSessionManagement\Reference.svcmap">
@@ -82,8 +137,24 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="CreateFolderStructureFromRootFolders.aspx" />
     <Content Include="FillInternalGroupFromAdGroup.aspx" />
+    <Content Include="images\existingdirectory.png" />
+    <Content Include="images\newdirectory.png" />
+    <Content Include="MoveAllSessionsToNewFolder.aspx" />
     <Content Include="page2.aspx" />
+    <None Include="Service References\PanoptoAccessManagement\configuration91.svcinfo" />
+    <None Include="Service References\PanoptoAccessManagement\configuration.svcinfo" />
+    <None Include="Service References\PanoptoAccessManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\configuration91.svcinfo" />
+    <None Include="Service References\PanoptoRemoteRecorderManagement\configuration.svcinfo" />
+    <None Include="Service References\PanoptoRemoteRecorderManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -180,6 +251,20 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AmendRecurringRecording.aspx.cs">
+      <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AmendRecurringRecording.aspx.designer.cs">
+      <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFolderStructureFromRootFolders.aspx.cs">
+      <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateFolderStructureFromRootFolders.aspx.designer.cs">
+      <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +283,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MakeFolders.aspx.cs">
+      <DependentUpon>MakeFolders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeFolders.aspx.designer.cs">
+      <DependentUpon>MakeFolders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MoveAllSessionsToNewFolder.aspx.cs">
+      <DependentUpon>MoveAllSessionsToNewFolder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MoveAllSessionsToNewFolder.aspx.designer.cs">
+      <DependentUpon>MoveAllSessionsToNewFolder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="page2.aspx.cs">
       <DependentUpon>page2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,6 +305,16 @@
       <DependentUpon>page2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PanoptoAccessManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PanoptoRemoteRecorderManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\PanoptoSessionManagement\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -235,6 +344,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PanoptoAccessManagement\" />
+    <WCFMetadataStorage Include="Service References\PanoptoRemoteRecorderManagement\" />
     <WCFMetadataStorage Include="Service References\PanoptoSessionManagement\" />
     <WCFMetadataStorage Include="Service References\PanoptoUserManagement\" />
   </ItemGroup>

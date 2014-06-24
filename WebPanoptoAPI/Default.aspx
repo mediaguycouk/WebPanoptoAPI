@@ -9,9 +9,9 @@
         Step 1</h2>
     <p>
         Please enter your server details</p>
-    <asp:Label ID="lblErrorStep1" runat="server" Text="Label" ForeColor="Red" Font-Bold="True"></asp:Label>
+    <asp:Label ID="lblErrorStep1" runat="server" ForeColor="Red" Font-Bold="True"></asp:Label>
     <p>
-        https://<asp:TextBox ID="txtFqdn" runat="server" Width="300px"></asp:TextBox>/Panopto/...
+        https://<asp:TextBox ID="txtFqdn" runat="server" Width="300px">coursecast.devdomain.soton.ac.uk</asp:TextBox>/Panopto/...
     </p>
     <p>
         Enter your API users username and password.</p>
