@@ -20,7 +20,7 @@ namespace WebPanoptoAPI
             {
                 if ((string)Session["lastPage"] != "page2")
                 {
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Login.aspx");
                 }
             }
             catch (Exception)
@@ -84,6 +84,7 @@ namespace WebPanoptoAPI
             bool lastPage = false;
             int resultsPerPage = 5;
             int page = 0;
+            
 
             while (!lastPage)
             {
@@ -91,10 +92,16 @@ namespace WebPanoptoAPI
                     new PanoptoSessionManagement.Pagination { MaxNumberResults = resultsPerPage, PageNumber = page };
                 SessionState[] stateScheduled = new SessionState[1] { SessionState.Scheduled };
                 PanoptoSessionManagement.ListSessionsRequest request =
-                    new PanoptoSessionManagement.ListSessionsRequest { Pagination = pagination, States = stateScheduled, FolderId = new Guid(ddlFolders.SelectedValue) };
+                    new PanoptoSessionManagement.ListSessionsRequest { Pagination = pagination, 
+                        States = stateScheduled, FolderId = new Guid(ddlFolders.SelectedValue), SortBy = SessionSortField.Date, SortIncreasing = true };
 
                 ListSessionsResponse response = sessionMgr.GetSessionsList(sessionAuthenticationInfo, request, null);
 
+                CheckBox[] cbl = new CheckBox[response.Results.Length];
+                Label[] lineBreak = new Label[response.Results.Length];
+                
+
+                int i = 0;
                 if (resultsPerPage * (page + 1) >= response.TotalNumberResults)
                 {
                     lastPage = true;
@@ -104,7 +111,13 @@ namespace WebPanoptoAPI
                 {
                     foreach (Session session in response.Results)
                     {
-                        ddlScheduledSessionList.Items.Add(new ListItem(session.Name + " (" + session.StartTime.ToString() + ")", session.Id.ToString()));
+                        cbl[i] = new CheckBox();
+                        cbl[i].Text = session.Name + " starting at " + session.StartTime + " for " + Math.Round((double)session.Duration / 60) + " minutes";
+                        lineBreak[i] = new Label();
+                        lineBreak[i].Text = "<br/>\r\n";
+                        PlaceHolder1.Controls.Add(cbl[i]);
+                        PlaceHolder1.Controls.Add(lineBreak[i]);
+                        i++;
                     }
                 }
                 else
@@ -117,6 +130,11 @@ namespace WebPanoptoAPI
             }
 
             MultiView1.SetActiveView(View2);
+        }
+
+        protected void btnFirstSessionList_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

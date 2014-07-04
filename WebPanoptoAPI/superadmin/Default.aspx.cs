@@ -16,12 +16,12 @@ namespace WebPanoptoAPI
             {
                 if ((string)Session["lastPage"] != "page1")
                 {
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Login.aspx");
                 }
             }
             catch (Exception)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             }
             
             lblApiSystemRole.Text = Session["apiRole"].ToString();

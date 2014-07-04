@@ -34,7 +34,7 @@
 
                 if (Regex.IsMatch(folder.Name, "^[A-Z]{4}$"))
                 else if (Regex.IsMatch(folder.Name, "^[A-Z]{4}[0-9]{4}$"))
-                else if (Regex.IsMatch(folder.Name, "[A-Z]{4}[0-9]{4}.+$") && folder.ParentFolder.Equals(null))
+                else if (Regex.IsMatch(folder.Name, "^[A-Z]{4}[0-9]{4}.+$") && folder.ParentFolder.Equals(null))
 
                 And how which characters to take off the name of the folder, which should match the Regex above
                 Folder newFolder = sessionMgr.AddFolder(sessionAuthInfo,
@@ -54,7 +54,11 @@
             <p>
                 <asp:Label ID="lblIgnoredFolders" runat="server"></asp:Label>
             </p>
+            <p>
+                <asp:Button ID="btnCommitChanges" runat="server" 
+                    onclick="btnCommitChanges_Click" Text="Commit changes" />
+            </p>
         </asp:View>
-        <asp:View ID="View3" runat="server"></asp:View>
+        <asp:View ID="View3" runat="server">Changes committed</asp:View>
     </asp:MultiView>
 </asp:Content>

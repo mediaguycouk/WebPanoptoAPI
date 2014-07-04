@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPanoptoAPI {
+namespace WebPanoptoAPI.superadmin {
     
     
-    public partial class AmendRecurringRecording {
+    public partial class MakeLiveBackupLink {
         
         /// <summary>
         /// MultiView1 control.
@@ -31,22 +31,49 @@ namespace WebPanoptoAPI {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// ddlFolders control.
+        /// ddlFolderToUnlock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFolders;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFolderToUnlock;
         
         /// <summary>
-        /// btnScheduledFolder control.
+        /// txtDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnScheduledFolder;
+        protected global::System.Web.UI.WebControls.TextBox txtDay;
+        
+        /// <summary>
+        /// txtMonth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMonth;
+        
+        /// <summary>
+        /// txtYear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtYear;
+        
+        /// <summary>
+        /// btnMakeLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMakeLink;
         
         /// <summary>
         /// View2 control.
@@ -58,12 +85,12 @@ namespace WebPanoptoAPI {
         protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// ddlScheduledSessionList control.
+        /// txtBackupLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlScheduledSessionList;
+        protected global::System.Web.UI.WebControls.TextBox txtBackupLink;
     }
 }

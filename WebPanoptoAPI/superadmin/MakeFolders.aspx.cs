@@ -22,7 +22,7 @@ namespace WebPanoptoAPI
             {
                 if ((string)Session["lastPage"] != "page2")
                 {
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Login.aspx");
                 }
             }
             catch (Exception)

@@ -65,10 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\ChangePassword.aspx" />
-    <Content Include="Account\ChangePasswordSuccess.aspx" />
-    <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Register.aspx" />
     <None Include="Service References\PanoptoAccessManagement\AccessManagement.wsdl" />
     <None Include="Service References\PanoptoAccessManagement\AccessManagement.xsd">
       <SubType>Designer</SubType>
@@ -82,8 +78,11 @@
     <None Include="Service References\PanoptoAccessManagement\AccessManagement3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="AmendRecurringRecording.aspx" />
-    <Content Include="MakeFolders.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="live\Default.aspx" />
+    <Content Include="superadmin\AmendRecurringRecording.aspx" />
+    <Content Include="images\superadminbackground.png" />
+    <Content Include="superadmin\MakeFolders.aspx" />
     <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.FolderAccessDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -115,15 +114,15 @@
     <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.ListRecordersResponse.datasource">
+    <None Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.ListRecordersResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.RemoteRecorder.datasource">
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.RemoteRecorder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.ScheduledRecordingResult.datasource">
+    </None>
+    <None Include="Service References\PanoptoRemoteRecorderManagement\WebPanoptoAPI.PanoptoRemoteRecorderManagement.ScheduledRecordingResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    </None>
     <None Include="Service References\PanoptoSessionManagement\configuration91.svcinfo" />
     <None Include="Service References\PanoptoSessionManagement\configuration.svcinfo" />
     <None Include="Service References\PanoptoSessionManagement\Reference.svcmap">
@@ -137,12 +136,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="CreateFolderStructureFromRootFolders.aspx" />
-    <Content Include="FillInternalGroupFromAdGroup.aspx" />
+    <Content Include="superadmin\CreateFolderStructureFromRootFolders.aspx" />
+    <Content Include="superadmin\FillInternalGroupFromAdGroup.aspx" />
     <Content Include="images\existingdirectory.png" />
     <Content Include="images\newdirectory.png" />
-    <Content Include="MoveAllSessionsToNewFolder.aspx" />
-    <Content Include="page2.aspx" />
+    <Content Include="superadmin\MakeLiveBackupLink.aspx" />
+    <Content Include="superadmin\MoveAllSessionsToNewFolder.aspx" />
+    <Content Include="superadmin\Default.aspx" />
     <None Include="Service References\PanoptoAccessManagement\configuration91.svcinfo" />
     <None Include="Service References\PanoptoAccessManagement\configuration.svcinfo" />
     <None Include="Service References\PanoptoAccessManagement\Reference.svcmap">
@@ -156,7 +156,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="superadmin\Login.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -223,48 +223,6 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
-      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AmendRecurringRecording.aspx.cs">
-      <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AmendRecurringRecording.aspx.designer.cs">
-      <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateFolderStructureFromRootFolders.aspx.cs">
-      <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateFolderStructureFromRootFolders.aspx.designer.cs">
-      <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,37 +230,72 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Files.cs" />
-    <Compile Include="FillInternalGroupFromAdGroup.aspx.cs">
+    <Compile Include="live\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="live\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Passwords_NotToBePublished.cs" />
+    <Compile Include="superadmin\AmendRecurringRecording.aspx.cs">
+      <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\AmendRecurringRecording.aspx.designer.cs">
+      <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\CreateFolderStructureFromRootFolders.aspx.cs">
+      <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\CreateFolderStructureFromRootFolders.aspx.designer.cs">
+      <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\FillInternalGroupFromAdGroup.aspx.cs">
       <DependentUpon>FillInternalGroupFromAdGroup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FillInternalGroupFromAdGroup.aspx.designer.cs">
+    <Compile Include="superadmin\FillInternalGroupFromAdGroup.aspx.designer.cs">
       <DependentUpon>FillInternalGroupFromAdGroup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="MakeFolders.aspx.cs">
+    <Compile Include="superadmin\MakeFolders.aspx.cs">
       <DependentUpon>MakeFolders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MakeFolders.aspx.designer.cs">
+    <Compile Include="superadmin\MakeFolders.aspx.designer.cs">
       <DependentUpon>MakeFolders.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MoveAllSessionsToNewFolder.aspx.cs">
+    <Compile Include="superadmin\MakeLiveBackupLink.aspx.cs">
+      <DependentUpon>MakeLiveBackupLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\MakeLiveBackupLink.aspx.designer.cs">
+      <DependentUpon>MakeLiveBackupLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\MoveAllSessionsToNewFolder.aspx.cs">
       <DependentUpon>MoveAllSessionsToNewFolder.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MoveAllSessionsToNewFolder.aspx.designer.cs">
+    <Compile Include="superadmin\MoveAllSessionsToNewFolder.aspx.designer.cs">
       <DependentUpon>MoveAllSessionsToNewFolder.aspx</DependentUpon>
     </Compile>
-    <Compile Include="page2.aspx.cs">
-      <DependentUpon>page2.aspx</DependentUpon>
+    <Compile Include="superadmin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="page2.aspx.designer.cs">
-      <DependentUpon>page2.aspx</DependentUpon>
+    <Compile Include="superadmin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\PanoptoAccessManagement\Reference.cs">
@@ -337,7 +330,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>

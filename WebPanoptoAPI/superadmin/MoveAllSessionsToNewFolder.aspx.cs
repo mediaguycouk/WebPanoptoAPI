@@ -24,11 +24,11 @@ namespace WebPanoptoAPI
             }
             catch (Exception)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Login.aspx");
             }
             
             bool lastPage = false;
-            int resultsPerPage = 50;
+            int resultsPerPage = 100;
             int page = 0;
 
             sessionAuthenticationInfo = new PanoptoSessionManagement.AuthenticationInfo()
@@ -67,7 +67,7 @@ namespace WebPanoptoAPI
         protected void btnSelectFolders_Click(object sender, EventArgs e)
         {
             bool lastPage = false;
-            int resultsPerPage = 50;
+            int resultsPerPage = 100;
             int page = 0;
 
             sessionAuthenticationInfo = new PanoptoSessionManagement.AuthenticationInfo()
@@ -114,7 +114,7 @@ namespace WebPanoptoAPI
         protected void btnConfirmMove_Click(object sender, EventArgs e)
         {
             bool lastPage = false;
-            int resultsPerPage = 50;
+            int resultsPerPage = 100;
             int page = 0;
 
             sessionAuthenticationInfo = new PanoptoSessionManagement.AuthenticationInfo()
