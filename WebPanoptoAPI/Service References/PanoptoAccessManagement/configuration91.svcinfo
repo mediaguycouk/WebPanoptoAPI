@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ZCjj4EpSN408rH/+oXnNXPMcGSw=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="g651f4OIECGBQ6Q8SCKJD7B38VE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IAccessManagement">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IAccessManagement" contract="PanoptoAccessManagement.IAccessManagement" bindingType="basicHttpBinding" address="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc" bindingConfiguration="BasicHttpBinding_IAccessManagement">
+    <endpoint name="BasicHttpBinding_IAccessManagement" contract="PanoptoAccessManagement.IAccessManagement" bindingType="basicHttpBinding" address="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc" bindingConfiguration="BasicHttpBinding_IAccessManagement">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc</serializedValue>
+          <serializedValue>https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

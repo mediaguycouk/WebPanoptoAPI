@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebPanoptoAPI.PanoptoSessionManagement;
+using WebPanoptoAPI.PanoptoUserManagement;
 
 namespace WebPanoptoAPI
 {
@@ -17,7 +18,7 @@ namespace WebPanoptoAPI
         {
             try
             {
-                if ((string)Session["lastPage"] != "page2")
+                if ((string)Session["loggedin"] != "loggedin")
                 {
                     Response.Redirect("Default.aspx");
                 }
@@ -26,39 +27,55 @@ namespace WebPanoptoAPI
             {
                 Response.Redirect("Login.aspx");
             }
-            
-            bool lastPage = false;
-            int resultsPerPage = 100;
-            int page = 0;
 
-            sessionAuthenticationInfo = new PanoptoSessionManagement.AuthenticationInfo()
+            if (ddlMoveFrom.Items.Count == 0)
+
             {
-                UserKey = (string)Session["apiUsername"],
-                Password = (string)Session["apiPassword"]
-            };
+                bool lastPage = false;
+                int resultsPerPage = 100;
+                int page = 0;
 
-            while (!lastPage)
-            {
-                PanoptoSessionManagement.Pagination pagination = new PanoptoSessionManagement.Pagination { MaxNumberResults = resultsPerPage, PageNumber = page };
-                ISessionManagement sessionMgr = new SessionManagementClient();
-                ListFoldersResponse response = sessionMgr.GetFoldersList(sessionAuthenticationInfo, new ListFoldersRequest { Pagination = pagination, SortIncreasing = true }, null);
-
-                if (resultsPerPage * (page + 1) >= response.TotalNumberResults)
+                sessionAuthenticationInfo = new PanoptoSessionManagement.AuthenticationInfo()
                 {
-                    lastPage = true;
-                }
+                    UserKey = (string) Session["apiUsername"],
+                    Password = (string) Session["apiPassword"]
+                };
 
-                if (response.Results.Length > 0)
+                while (!lastPage)
                 {
-                    foreach (Folder folder in response.Results)
+                    PanoptoSessionManagement.Pagination pagination = new PanoptoSessionManagement.Pagination
                     {
-                        ddlMoveFrom.Items.Add(new ListItem(folder.Name, folder.Id.ToString()));
-                        ddlMoveTo.Items.Add(new ListItem(folder.Name, folder.Id.ToString()));
+                        MaxNumberResults = resultsPerPage,
+                        PageNumber = page
+                    };
+                    ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+                    ListFoldersResponse response = sessionMgr.GetFoldersList(sessionAuthenticationInfo,
+                        new ListFoldersRequest {Pagination = pagination, SortIncreasing = true}, null);
+
+                    if (resultsPerPage*(page + 1) >= response.TotalNumberResults)
+                    {
+                        lastPage = true;
                     }
+
+                    if (response.Results.Length > 0)
+                    {
+                        foreach (Folder folder in response.Results)
+                        {
+                            string folderName = folder.Name;
+
+                            if (folderName.Length > 42)
+                            {
+                                folderName = folderName.Substring(0, 42) + "...";
+                            }
+
+                            ddlMoveFrom.Items.Add(new ListItem(folderName, folder.Id.ToString()));
+                            ddlMoveTo.Items.Add(new ListItem(folderName, folder.Id.ToString()));
+                        }
+                    }
+
+                    page++;
+
                 }
-
-                page++;
-
             }
 
             MultiView1.SetActiveView(View1);
@@ -76,11 +93,11 @@ namespace WebPanoptoAPI
                 Password = (string)Session["apiPassword"]
             };
 
-            ISessionManagement sessionMgr = new SessionManagementClient();
+            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
 
             Folder[] toFolder = sessionMgr.GetFoldersById(sessionAuthenticationInfo, new Guid[1]{new Guid(ddlMoveTo.SelectedValue)});
             lblToFolder.Text = toFolder[0].Name;
-            lblToFolderUrl.Text = "<a href=\""+toFolder[0].SettingsUrl +"\" target=\"_blank\">here</a>";
+            lblToFolderUrl.Text = "<a href=\"" + toFolder[0].SettingsUrl +"\" target=\"_blank\">here</a>";
 
             while (!lastPage)
             {
@@ -100,8 +117,13 @@ namespace WebPanoptoAPI
                 {
                     foreach (Session session in response.Results)
                     {
-                        lblSessionList.Text += "<li>" +session.Name + " on " + session.StartTime.ToString() + "</li>\r\n";
-                        sessionToMoveList.Add(session.Id);
+                        //lblSessionList.Text += "<li>" +session.Name + " on " + session.StartTime.ToString() + "</li>\r\n";
+                        //sessionToMoveList.Add(session.Id);
+
+                        ListItem sessionItem = new ListItem(session.Name + " on " + session.StartTime.ToString(), session.Id.ToString());
+                        sessionItem.Selected = true;
+
+                        chklistSessions.Items.Add(sessionItem);
                     }
                 }
 
@@ -123,32 +145,14 @@ namespace WebPanoptoAPI
                 Password = (string)Session["apiPassword"]
             };
 
-            ISessionManagement sessionMgr = new SessionManagementClient();
+            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
 
-            while (!lastPage)
+            foreach (ListItem item in chklistSessions.Items)
             {
-                PanoptoSessionManagement.Pagination pagination =
-                    new PanoptoSessionManagement.Pagination { MaxNumberResults = resultsPerPage, PageNumber = page };
-                PanoptoSessionManagement.ListSessionsRequest request =
-                    new PanoptoSessionManagement.ListSessionsRequest { Pagination = pagination, FolderId = new Guid(ddlMoveFrom.SelectedValue) };
-
-                ListSessionsResponse response = sessionMgr.GetSessionsList(sessionAuthenticationInfo, request, null);
-
-                if (resultsPerPage * (page + 1) >= response.TotalNumberResults)
+                if (item.Selected)
                 {
-                    lastPage = true;
+                    sessionToMoveList.Add(new Guid(item.Value));
                 }
-
-                if (response.Results.Length > 0)
-                {
-                    foreach (Session session in response.Results)
-                    {
-                        sessionToMoveList.Add(session.Id);
-                    }
-                }
-
-                page++;
-
             }
 
             sessionMgr.MoveSessions(sessionAuthenticationInfo, sessionToMoveList.ToArray(),

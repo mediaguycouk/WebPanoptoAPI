@@ -27,5 +27,7 @@
         <asp:Button ID="btnSubmitFqdn" runat="server" onclick="btnSubmitFqdn_Click" 
             Text="Submit" />
     </p>
+    <p>
+        <asp:Label runat="server" ID="lblException"></asp:Label></p>
 
 </asp:Content>

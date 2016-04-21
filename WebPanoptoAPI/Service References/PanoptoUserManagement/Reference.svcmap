@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPI/4.2/UserManagement.svc?wsd" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://srv00736.soton.ac.uk/Panopto/PublicAPI/4.6/UserManagement.svc?wsd" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserManagement.wsdl" MetadataType="Wsdl" ID="370ee6b7-dc9e-47de-9852-e22ffbda1b11" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/UserManagement.svc?wsdl" />
-    <MetadataFile FileName="UserManagement.disco" MetadataType="Disco" ID="a6042989-b8d0-417f-858a-ca5985b5c06b" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/UserManagement.svc?disco" />
-    <MetadataFile FileName="UserManagement.xsd" MetadataType="Schema" ID="fa2babd3-84c2-47be-b4dd-4bb2cb72c1bc" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/UserManagement.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserManagement1.xsd" MetadataType="Schema" ID="e2f049f5-21f2-42d7-b079-8257d6c66430" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/UserManagement.svc?xsd=xsd3" />
-    <MetadataFile FileName="UserManagement2.xsd" MetadataType="Schema" ID="ff9cc335-5d73-4f03-8f80-2ed80d8c5875" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/UserManagement.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserManagement3.xsd" MetadataType="Schema" ID="4642fc80-bb75-4501-8c47-75bd6376dd25" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/UserManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserManagement1.disco" MetadataType="Disco" ID="128b0b5d-e60f-47c9-b01f-2cef2c0ca2ae" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/UserManagement.svc?disco" />
+    <MetadataFile FileName="UserManagement4.xsd" MetadataType="Schema" ID="c81c9e08-c538-4d38-b41a-7cfdee0a9fb5" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/UserManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserManagement41.xsd" MetadataType="Schema" ID="de2fe7e5-c9b9-44c6-8e6c-dab5a81f7ed7" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/UserManagement.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserManagement42.xsd" MetadataType="Schema" ID="b3993aa4-4f6e-45d9-8936-c27057c37869" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/UserManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserManagement43.xsd" MetadataType="Schema" ID="109e25b1-d4f4-4a85-88d1-7de38b47acd3" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/UserManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserManagement1.wsdl" MetadataType="Wsdl" ID="530dbf08-aad4-42af-8154-1778cc1bab5c" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/UserManagement.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

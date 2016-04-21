@@ -65,23 +65,64 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <None Include="Service References\PanoptoAccessManagement\AccessManagement.wsdl" />
-    <None Include="Service References\PanoptoAccessManagement\AccessManagement.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoAccessManagement\AccessManagement1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoAccessManagement\AccessManagement2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoAccessManagement\AccessManagement3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Default.aspx" />
     <Content Include="live\Default.aspx" />
+    <None Include="Properties\PublishProfiles\Local Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Preprod.pubxml" />
+    <None Include="Properties\PublishProfiles\Production !!!.pubxml" />
+    <None Include="Properties\PublishProfiles\PublishToDevdomainCoursecast.pubxml" />
+    <None Include="Service References\PanoptoAuth\Auth.wsdl" />
+    <None Include="Service References\PanoptoAuth\Auth.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAuth\Auth1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAuth\Auth2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoUsageManagement\UsageReporting.wsdl" />
+    <None Include="Service References\PanoptoUsageManagement\UsageReporting.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoUsageManagement\UsageReporting1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoUsageManagement\UsageReporting2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoUsageManagement\WebPanoptoAPI.PanoptoUsageManagement.DetailedUsageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PanoptoUsageManagement\WebPanoptoAPI.PanoptoUsageManagement.SummaryUsageResponseItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PanoptoUserManagement\UserManagement1.disco" />
+    <None Include="Service References\PanoptoUsageManagement\UsageReporting.disco" />
+    <None Include="Service References\PanoptoUsageManagement\configuration91.svcinfo" />
+    <None Include="Service References\PanoptoUsageManagement\configuration.svcinfo" />
+    <None Include="Service References\PanoptoUsageManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PanoptoAuth\Auth.disco" />
+    <None Include="Service References\PanoptoAuth\configuration91.svcinfo" />
+    <None Include="Service References\PanoptoAuth\configuration.svcinfo" />
+    <None Include="Service References\PanoptoAuth\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="superadmin\AmendRecurringRecording.aspx" />
     <Content Include="images\superadminbackground.png" />
+    <Content Include="superadmin\ArchiveOld.aspx" />
+    <Content Include="superadmin\ListVideoEmbedHTML.aspx" />
+    <Content Include="superadmin\ListVideoURLs.aspx" />
+    <Content Include="superadmin\MakeAssessmentSessions.aspx" />
+    <Content Include="superadmin\MakeVideosInternal.aspx" />
+    <Content Include="superadmin\MakeVideosPublic.aspx" />
+    <Content Include="superadmin\FlashPlayerDBVideos.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="superadmin\MakeFolders.aspx" />
     <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.FolderAccessDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -95,6 +136,19 @@
     <Content Include="Service References\PanoptoAccessManagement\WebPanoptoAPI.PanoptoAccessManagement.UserAccessDetails.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement1.wsdl" />
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoAccessManagement\AccessManagement43.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement.wsdl" />
     <None Include="Service References\PanoptoRemoteRecorderManagement\RemoteRecorderManagement.xsd">
       <SubType>Designer</SubType>
@@ -129,7 +183,25 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\PanoptoUserManagement\UserManagement.disco" />
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement1.wsdl" />
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PanoptoSessionManagement\SessionManagement55.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PanoptoUserManagement\configuration91.svcinfo" />
     <None Include="Service References\PanoptoUserManagement\configuration.svcinfo" />
     <None Include="Service References\PanoptoUserManagement\Reference.svcmap">
@@ -141,6 +213,8 @@
     <Content Include="images\existingdirectory.png" />
     <Content Include="images\newdirectory.png" />
     <Content Include="superadmin\MakeLiveBackupLink.aspx" />
+    <Content Include="superadmin\StatsDaily.aspx" />
+    <Content Include="superadmin\StatsMonthly.aspx" />
     <Content Include="superadmin\MoveAllSessionsToNewFolder.aspx" />
     <Content Include="superadmin\Default.aspx" />
     <None Include="Service References\PanoptoAccessManagement\configuration91.svcinfo" />
@@ -161,7 +235,12 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="superadmin\SouthamptonOnly.aspx" />
+    <Content Include="superadmin\UpdateFolderParent.aspx" />
+    <Content Include="superadmin\UpdateUploadedFlashMetadata.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -189,17 +268,17 @@
     <None Include="Service References\PanoptoSessionManagement\WebPanoptoAPI.PanoptoSessionManagement.Session.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PanoptoUserManagement\UserManagement.wsdl" />
-    <None Include="Service References\PanoptoUserManagement\UserManagement.xsd">
+    <None Include="Service References\PanoptoUserManagement\UserManagement1.wsdl" />
+    <None Include="Service References\PanoptoUserManagement\UserManagement4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PanoptoUserManagement\UserManagement1.xsd">
+    <None Include="Service References\PanoptoUserManagement\UserManagement41.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PanoptoUserManagement\UserManagement2.xsd">
+    <None Include="Service References\PanoptoUserManagement\UserManagement42.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\PanoptoUserManagement\UserManagement3.xsd">
+    <None Include="Service References\PanoptoUserManagement\UserManagement43.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PanoptoUserManagement\WebPanoptoAPI.PanoptoUserManagement.Group.datasource">
@@ -238,12 +317,64 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Passwords_NotToBePublished.cs" />
+    <Compile Include="Service References\PanoptoAuth\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PanoptoUsageManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="superadmin\AmendRecurringRecording.aspx.cs">
       <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="superadmin\AmendRecurringRecording.aspx.designer.cs">
       <DependentUpon>AmendRecurringRecording.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\ArchiveOld.aspx.cs">
+      <DependentUpon>ArchiveOld.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\ArchiveOld.aspx.designer.cs">
+      <DependentUpon>ArchiveOld.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\ListVideoEmbedHTML.aspx.cs">
+      <DependentUpon>ListVideoEmbedHTML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\ListVideoEmbedHTML.aspx.designer.cs">
+      <DependentUpon>ListVideoEmbedHTML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\ListVideoURLs.aspx.cs">
+      <DependentUpon>ListVideoURLs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\ListVideoURLs.aspx.designer.cs">
+      <DependentUpon>ListVideoURLs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\MakeAssessmentSessions.aspx.cs">
+      <DependentUpon>MakeAssessmentSessions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\MakeAssessmentSessions.aspx.designer.cs">
+      <DependentUpon>MakeAssessmentSessions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\MakeVideosInternal.aspx.cs">
+      <DependentUpon>MakeVideosInternal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\MakeVideosInternal.aspx.designer.cs">
+      <DependentUpon>MakeVideosInternal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\MakeVideosPublic.aspx.cs">
+      <DependentUpon>MakeVideosPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\MakeVideosPublic.aspx.designer.cs">
+      <DependentUpon>MakeVideosPublic.aspx</DependentUpon>
     </Compile>
     <Compile Include="superadmin\CreateFolderStructureFromRootFolders.aspx.cs">
       <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
@@ -252,6 +383,7 @@
     <Compile Include="superadmin\CreateFolderStructureFromRootFolders.aspx.designer.cs">
       <DependentUpon>CreateFolderStructureFromRootFolders.aspx</DependentUpon>
     </Compile>
+    <Compile Include="superadmin\FlashData.cs" />
     <Compile Include="superadmin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +414,20 @@
     </Compile>
     <Compile Include="superadmin\MakeLiveBackupLink.aspx.designer.cs">
       <DependentUpon>MakeLiveBackupLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\StatsDaily.aspx.cs">
+      <DependentUpon>StatsDaily.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\StatsDaily.aspx.designer.cs">
+      <DependentUpon>StatsDaily.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\StatsMonthly.aspx.cs">
+      <DependentUpon>StatsMonthly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\StatsMonthly.aspx.designer.cs">
+      <DependentUpon>StatsMonthly.aspx</DependentUpon>
     </Compile>
     <Compile Include="superadmin\MoveAllSessionsToNewFolder.aspx.cs">
       <DependentUpon>MoveAllSessionsToNewFolder.aspx</DependentUpon>
@@ -325,6 +471,27 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="superadmin\SouthamptonOnly.aspx.cs">
+      <DependentUpon>SouthamptonOnly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\SouthamptonOnly.aspx.designer.cs">
+      <DependentUpon>SouthamptonOnly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\UpdateFolderParent.aspx.cs">
+      <DependentUpon>UpdateFolderParent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\UpdateFolderParent.aspx.designer.cs">
+      <DependentUpon>UpdateFolderParent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="superadmin\UpdateUploadedFlashMetadata.aspx.cs">
+      <DependentUpon>UpdateUploadedFlashMetadata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="superadmin\UpdateUploadedFlashMetadata.aspx.designer.cs">
+      <DependentUpon>UpdateUploadedFlashMetadata.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,27 +504,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\PanoptoAccessManagement\" />
+    <WCFMetadataStorage Include="Service References\PanoptoAuth\" />
     <WCFMetadataStorage Include="Service References\PanoptoRemoteRecorderManagement\" />
     <WCFMetadataStorage Include="Service References\PanoptoSessionManagement\" />
+    <WCFMetadataStorage Include="Service References\PanoptoUsageManagement\" />
     <WCFMetadataStorage Include="Service References\PanoptoUserManagement\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PanoptoSessionManagement\SessionManagement.wsdl" />
-    <None Include="Service References\PanoptoSessionManagement\SessionManagement.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoSessionManagement\SessionManagement1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoSessionManagement\SessionManagement2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoSessionManagement\SessionManagement3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PanoptoSessionManagement\SessionManagement4.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -18,16 +18,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPI/4.2/RemoteRecorderManagement.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://srv00736.soton.ac.uk/Panopto/PublicAPI/4.6/RemoteRecorderManagement.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RemoteRecorderManagement.xsd" MetadataType="Schema" ID="d7f53e77-2e64-4d37-bd78-ce32033363a3" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd1" />
-    <MetadataFile FileName="RemoteRecorderManagement.wsdl" MetadataType="Wsdl" ID="a4431b18-34ad-4c0f-93a1-885191d18923" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPI/4.2/RemoteRecorderManagement.svc?wsdl" />
-    <MetadataFile FileName="RemoteRecorderManagement1.xsd" MetadataType="Schema" ID="f4905e68-cd3d-414b-ba5c-4636ee11ee3b" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd2" />
-    <MetadataFile FileName="RemoteRecorderManagement2.xsd" MetadataType="Schema" ID="639f317b-0769-4d8e-80ed-98fb4bed416a" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd5" />
-    <MetadataFile FileName="RemoteRecorderManagement3.xsd" MetadataType="Schema" ID="2af978ff-ef36-44e9-b703-cad4c5c30525" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd3" />
-    <MetadataFile FileName="RemoteRecorderManagement4.xsd" MetadataType="Schema" ID="087ac4fd-b7a6-439d-9285-cebcb1177f47" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd4" />
-    <MetadataFile FileName="RemoteRecorderManagement5.xsd" MetadataType="Schema" ID="091e9ade-59cd-440f-813a-d0c907cd5f07" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="RemoteRecorderManagement.xsd" MetadataType="Schema" ID="7dd8b740-6b81-45f3-b5cc-7a7d3322ef97" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd4" />
+    <MetadataFile FileName="RemoteRecorderManagement.wsdl" MetadataType="Wsdl" ID="bdf29f2a-609c-47cd-bcb1-f55ac6bbf8d0" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPI/4.6/RemoteRecorderManagement.svc?wsdl" />
+    <MetadataFile FileName="RemoteRecorderManagement1.xsd" MetadataType="Schema" ID="4fe992e7-064b-4b3d-b969-761bf4208bb5" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="RemoteRecorderManagement2.xsd" MetadataType="Schema" ID="5e1a5210-b464-483b-bc4a-e845bb85206e" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd5" />
+    <MetadataFile FileName="RemoteRecorderManagement3.xsd" MetadataType="Schema" ID="c8730cc6-5bd5-451f-8f50-d98f921b3988" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="RemoteRecorderManagement4.xsd" MetadataType="Schema" ID="9c2b8031-8a85-413b-85c4-583b76b4a96e" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="RemoteRecorderManagement5.xsd" MetadataType="Schema" ID="f9916311-e3aa-4582-b58d-f8c9c92469e5" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

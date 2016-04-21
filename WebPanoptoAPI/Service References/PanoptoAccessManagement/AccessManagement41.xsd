@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" />
+  <xs:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetUserAccessDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q1:AuthenticationInfo" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userId" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAccessDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="GetUserAccessDetailsResult" nillable="true" type="q3:UserAccessDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSelfUserAccessDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q4:AuthenticationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSelfUserAccessDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="GetSelfUserAccessDetailsResult" nillable="true" type="q5:UserAccessDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionAccessDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q6:AuthenticationInfo" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSessionAccessDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="GetSessionAccessDetailsResult" nillable="true" type="q8:SessionAccessDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFolderAccessDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q9:AuthenticationInfo" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="folderId" type="q10:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFolderAccessDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="GetFolderAccessDetailsResult" nillable="true" type="q11:FolderAccessDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupAccessDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q12:AuthenticationInfo" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupId" type="q13:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroupAccessDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="GetGroupAccessDetailsResult" nillable="true" type="q14:GroupAccessDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantUsersAccessToFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q15:AuthenticationInfo" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="folderId" type="q16:guid" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIds" nillable="true" type="q17:ArrayOfguid" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="role" type="q18:AccessRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantUsersAccessToFolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantUsersViewerAccessToSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q19:AuthenticationInfo" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q20:guid" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIds" nillable="true" type="q21:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantUsersViewerAccessToSessionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantGroupAccessToFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q22:AuthenticationInfo" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="folderId" type="q23:guid" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupId" type="q24:guid" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="role" type="q25:AccessRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantGroupAccessToFolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantGroupViewerAccessToSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q26:AuthenticationInfo" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q27:guid" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupId" type="q28:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GrantGroupViewerAccessToSessionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFolderIsPublic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q29:AuthenticationInfo" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="folderId" type="q30:guid" />
+        <xs:element minOccurs="0" name="isPublic" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFolderIsPublicResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSessionIsPublic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q31:AuthenticationInfo" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q32:guid" />
+        <xs:element minOccurs="0" name="isPublic" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSessionIsPublicResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSessionInheritViewerAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q33:AuthenticationInfo" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q34:guid" />
+        <xs:element minOccurs="0" name="inheritViewerAccess" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSessionInheritViewerAccessResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeUsersAccessFromFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q35:AuthenticationInfo" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="folderId" type="q36:guid" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIds" nillable="true" type="q37:ArrayOfguid" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="role" type="q38:AccessRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeUsersAccessFromFolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeUsersViewerAccessFromSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q39:AuthenticationInfo" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q40:guid" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userIds" nillable="true" type="q41:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeUsersViewerAccessFromSessionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeGroupAccessFromFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q42:AuthenticationInfo" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="folderId" type="q43:guid" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupId" type="q44:guid" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="role" type="q45:AccessRole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeGroupAccessFromFolderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeGroupViewerAccessFromSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" minOccurs="0" name="auth" nillable="true" type="q46:AuthenticationInfo" />
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q47:guid" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="groupId" type="q48:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RevokeGroupViewerAccessFromSessionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

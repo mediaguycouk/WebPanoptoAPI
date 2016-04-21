@@ -7,6 +7,7 @@ using System.ServiceModel;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebPanoptoAPI.PanoptoAuth;
 using WebPanoptoAPI.PanoptoUserManagement;
 using WebPanoptoAPI.PanoptoSessionManagement;
 
@@ -21,7 +22,8 @@ namespace WebPanoptoAPI
 
         protected void btnSubmitFqdn_Click(object sender, EventArgs e)
         {
-            IUserManagement userMgr = new UserManagementClient();
+            IUserManagement userMgr = new UserManagementClient("BasicHttpBinding_IUserManagement", "https://" + txtFqdn.Text + "/Panopto/PublicAPISSL/4.6/UserManagement.svc");
+            IAuth auth = new AuthClient("BasicHttpBinding_IAuth", "https://" + txtFqdn.Text + "/Panopto/PublicAPISSL/4.6/Auth.svc");
 
             PanoptoUserManagement.AuthenticationInfo userAuthenticationInfo = new PanoptoUserManagement.AuthenticationInfo()
             {
@@ -45,9 +47,10 @@ namespace WebPanoptoAPI
                 }
                 else
                 {
-                    Session["lastPage"] = "page1";
+                    Session["loggedin"] = "loggedin";
 
                     Session["server"] = txtFqdn.Text;
+                    Session["version"] = auth.GetServerVersion();
                     Session["apiUsername"] = txtApiUsername.Text;
                     Session["apiPassword"] = txtApiPassword.Text;
                     Session["apiRole"] = apiUser.SystemRole;
@@ -55,13 +58,12 @@ namespace WebPanoptoAPI
                     Server.Transfer("Default.aspx");
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 lblErrorStep1.Text = "<p>The username and password for your API user " +
                                     "was not valid</p>";
+                lblException.Text = "<!--" + Server.HtmlEncode(exception.ToString()) + "-->";
             }
-            
-
 
         }
     }

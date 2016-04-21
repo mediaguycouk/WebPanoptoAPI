@@ -18,9 +18,14 @@ namespace WebPanoptoAPI
         {
             try
             {
-                if ((string)Session["lastPage"] != "page2")
+                if ((string)Session["loggedin"] != "loggedin")
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("Login.aspx", false);
+                }
+                string currentServer = Session["server"].ToString();
+                if (!currentServer.Contains("soton.ac.uk"))
+                {
+                    Response.Redirect("SouthamptonOnly.aspx", false);
                 }
             }
             catch (Exception)
@@ -41,7 +46,7 @@ namespace WebPanoptoAPI
             while (!lastPage)
             {
                 PanoptoSessionManagement.Pagination pagination = new PanoptoSessionManagement.Pagination { MaxNumberResults = resultsPerPage, PageNumber = page };
-                ISessionManagement sessionMgr = new SessionManagementClient();
+                ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
                 ListFoldersResponse response = sessionMgr.GetFoldersList(sessionAuthenticationInfo, new ListFoldersRequest { Pagination = pagination, SortIncreasing = true }, null);
 
                 if (resultsPerPage * (page + 1) >= response.TotalNumberResults)
@@ -79,7 +84,7 @@ namespace WebPanoptoAPI
             };
 
             IRemoteRecorderManagement remoteMgr = new RemoteRecorderManagementClient();
-            ISessionManagement sessionMgr = new SessionManagementClient();
+            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
 
             bool lastPage = false;
             int resultsPerPage = 5;

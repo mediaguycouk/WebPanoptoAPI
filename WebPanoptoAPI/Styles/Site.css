@@ -391,3 +391,12 @@ div.accountInfo
 .larger {
     font-size: 110%;
 }
+.publicTrue {
+    background-color: greenyellow;
+}
+.internalTrue {
+    background-color: yellow;
+}
+.publicFalse {
+    background-color: lightcoral;
+}
