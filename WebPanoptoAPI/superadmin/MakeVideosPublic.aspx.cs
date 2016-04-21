@@ -4,15 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebPanoptoAPI.PanoptoAccessManagement;
 using WebPanoptoAPI.PanoptoSessionManagement;
 using WebPanoptoAPI.PanoptoUserManagement;
 
 namespace WebPanoptoAPI
 {
-    public partial class MoveAllSessionsToNewFolder : System.Web.UI.Page
+    public partial class MakeVideosPublic : System.Web.UI.Page
     {
         private PanoptoSessionManagement.AuthenticationInfo sessionAuthenticationInfo;
-        private List<Guid> sessionToMoveList = new List<Guid>();
+        private PanoptoAccessManagement.AuthenticationInfo accessAuthenticationInfo;
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +29,7 @@ namespace WebPanoptoAPI
                 Response.Redirect("Login.aspx");
             }
 
-            if (ddlMoveFrom.Items.Count == 0)
+            if (ddlFolder.Items.Count == 0)
 
             {
                 bool lastPage = false;
@@ -68,8 +69,7 @@ namespace WebPanoptoAPI
                                 folderName = folderName.Substring(0, 42) + "...";
                             }
 
-                            ddlMoveFrom.Items.Add(new ListItem(folderName, folder.Id.ToString()));
-                            ddlMoveTo.Items.Add(new ListItem(folderName, folder.Id.ToString()));
+                            ddlFolder.Items.Add(new ListItem(folderName, folder.Id.ToString()));
                         }
                     }
 
@@ -93,18 +93,23 @@ namespace WebPanoptoAPI
                 Password = (string)Session["apiPassword"]
             };
 
-            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+            accessAuthenticationInfo = new PanoptoAccessManagement.AuthenticationInfo()
+            {
+                UserKey = (string)Session["apiUsername"],
+                Password = (string)Session["apiPassword"]
+            };
 
-            Folder[] toFolder = sessionMgr.GetFoldersById(sessionAuthenticationInfo, new Guid[1]{new Guid(ddlMoveTo.SelectedValue)});
-            lblToFolder.Text = toFolder[0].Name;
-            lblToFolderUrl.Text = "<a href=\"" + toFolder[0].SettingsUrl +"\" target=\"_blank\">here</a>";
+            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+            IAccessManagement accessMgr = new AccessManagementClient("BasicHttpBinding_IAccessManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/AccessManagement.svc");
+
+            Folder[] toFolder = sessionMgr.GetFoldersById(sessionAuthenticationInfo, new Guid[1]{new Guid(ddlFolder.SelectedValue)});
 
             while (!lastPage)
             {
                 PanoptoSessionManagement.Pagination pagination =
                     new PanoptoSessionManagement.Pagination { MaxNumberResults = resultsPerPage, PageNumber = page };
                 PanoptoSessionManagement.ListSessionsRequest request =
-                    new PanoptoSessionManagement.ListSessionsRequest { Pagination = pagination, FolderId = new Guid(ddlMoveFrom.SelectedValue)};
+                    new PanoptoSessionManagement.ListSessionsRequest { Pagination = pagination, FolderId = new Guid(ddlFolder.SelectedValue)};
                 
                 ListSessionsResponse response = sessionMgr.GetSessionsList(sessionAuthenticationInfo, request, null);
 
@@ -121,7 +126,10 @@ namespace WebPanoptoAPI
                         //sessionToMoveList.Add(session.Id);
 
                         ListItem sessionItem = new ListItem(session.Name + " on " + session.StartTime.ToString(), session.Id.ToString());
-                        sessionItem.Selected = true;
+
+                        SessionAccessDetails sessionDetails = accessMgr.GetSessionAccessDetails(accessAuthenticationInfo, session.Id);
+                        sessionItem.Selected = sessionDetails.IsPublic;
+                        sessionItem.Attributes.Add("class", "public" + sessionDetails.IsPublic);
 
                         chklistSessions.Items.Add(sessionItem);
                     }
@@ -138,6 +146,7 @@ namespace WebPanoptoAPI
             bool lastPage = false;
             int resultsPerPage = 100;
             int page = 0;
+            int sessionsChanged = 0;
 
             sessionAuthenticationInfo = new PanoptoSessionManagement.AuthenticationInfo()
             {
@@ -145,20 +154,25 @@ namespace WebPanoptoAPI
                 Password = (string)Session["apiPassword"]
             };
 
-            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+            accessAuthenticationInfo = new PanoptoAccessManagement.AuthenticationInfo()
+            {
+                UserKey = (string)Session["apiUsername"],
+                Password = (string)Session["apiPassword"]
+            };
+
+            //ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+            IAccessManagement accessMgr = new AccessManagementClient("BasicHttpBinding_IAccessManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/AccessManagement.svc");
 
             foreach (ListItem item in chklistSessions.Items)
             {
-                if (item.Selected)
-                {
-                    sessionToMoveList.Add(new Guid(item.Value));
-                }
+                accessMgr.UpdateSessionIsPublic(accessAuthenticationInfo, new Guid(item.Value), item.Selected);
+                sessionsChanged++;
             }
 
-            sessionMgr.MoveSessions(sessionAuthenticationInfo, sessionToMoveList.ToArray(),
-                new Guid(ddlMoveTo.SelectedValue));
+            //sessionMgr.MoveSessions(sessionAuthenticationInfo, sessionToMakePublicList.ToArray(),
+            //    new Guid(ddlMoveTo.SelectedValue));
 
-            lblMoveConfirmation.Text = sessionToMoveList.Count + " sessions moved";
+            lblMoveConfirmation.Text = sessionsChanged.ToString() + " sessions updated";
 
             MultiView1.SetActiveView(View3);
         }

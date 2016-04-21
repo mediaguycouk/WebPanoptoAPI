@@ -7,117 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPanoptoAPI {
+namespace WebPanoptoAPI.superadmin {
     
     
-    public partial class MoveAllSessionsToNewFolder {
+    public partial class WeeklyStats {
         
         /// <summary>
-        /// MultiView1 control.
+        /// tblStats control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView1;
+        protected global::System.Web.UI.WebControls.Table tblStats;
         
         /// <summary>
-        /// View1 control.
+        /// btnPreviousYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View1;
+        protected global::System.Web.UI.WebControls.Button btnPreviousYear;
         
         /// <summary>
-        /// ddlMoveFrom control.
+        /// btnPreviousMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMoveFrom;
+        protected global::System.Web.UI.WebControls.Button btnPreviousMonth;
         
         /// <summary>
-        /// ddlMoveTo control.
+        /// btnNextMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMoveTo;
+        protected global::System.Web.UI.WebControls.Button btnNextMonth;
         
         /// <summary>
-        /// btnSelectFolders control.
+        /// btnNextYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelectFolders;
+        protected global::System.Web.UI.WebControls.Button btnNextYear;
         
         /// <summary>
-        /// View2 control.
+        /// hiddenPreviousYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View2;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenPreviousYear;
         
         /// <summary>
-        /// lblToFolder control.
+        /// hiddenPreviousMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToFolder;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenPreviousMonth;
         
         /// <summary>
-        /// lblToFolderUrl control.
+        /// hiddenNextMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToFolderUrl;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenNextMonth;
         
         /// <summary>
-        /// chklistSessions control.
+        /// hiddenNextYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chklistSessions;
-        
-        /// <summary>
-        /// btnConfirmMove control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmMove;
-        
-        /// <summary>
-        /// View3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View View3;
-        
-        /// <summary>
-        /// lblMoveConfirmation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoveConfirmation;
+        protected global::System.Web.UI.WebControls.HiddenField hiddenNextYear;
     }
 }

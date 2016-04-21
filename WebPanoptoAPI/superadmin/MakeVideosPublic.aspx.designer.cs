@@ -10,60 +10,87 @@
 namespace WebPanoptoAPI {
     
     
-    public partial class _Default {
+    public partial class MakeVideosPublic {
         
         /// <summary>
-        /// lblErrorStep1 control.
+        /// MultiView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorStep1;
+        protected global::System.Web.UI.WebControls.MultiView MultiView1;
         
         /// <summary>
-        /// txtFqdn control.
+        /// View1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFqdn;
+        protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// txtApiUsername control.
+        /// ddlFolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApiUsername;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFolder;
         
         /// <summary>
-        /// txtApiPassword control.
+        /// btnSelectFolders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApiPassword;
+        protected global::System.Web.UI.WebControls.Button btnSelectFolders;
         
         /// <summary>
-        /// btnSubmitFqdn control.
+        /// View2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmitFqdn;
+        protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// lblException control.
+        /// chklistSessions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblException;
+        protected global::System.Web.UI.WebControls.CheckBoxList chklistSessions;
+        
+        /// <summary>
+        /// btnConfirmUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirmUpdate;
+        
+        /// <summary>
+        /// View3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View3;
+        
+        /// <summary>
+        /// lblMoveConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoveConfirmation;
     }
 }

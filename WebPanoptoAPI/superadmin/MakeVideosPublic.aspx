@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MoveAllSessionsToNewFolder.aspx.cs" Inherits="WebPanoptoAPI.MoveAllSessionsToNewFolder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MakeVideosPublic.aspx.cs" Inherits="WebPanoptoAPI.MakeVideosPublic" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -9,17 +9,11 @@
             <table cellspacing="10">
                 <tr>
                     <th>
-                        Move sessions from</th>
-                    <th>
-                        Move sessions to</th>
+                        Make videos in this folder public</th>
                 </tr>
                 <tr>
                     <td>
-                        <asp:DropDownList ID="ddlMoveFrom" runat="server">
-                        </asp:DropDownList>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlMoveTo" runat="server">
+                        <asp:DropDownList ID="ddlFolder" runat="server">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -31,17 +25,15 @@
         </asp:View> 
         <asp:View ID="View2" runat="server">
             <p>
-                The following sessions will be moved into the folder
-                <asp:Label ID="lblToFolder" runat="server" Text="Label"></asp:Label>
-                . You can check if this is the right destination folder by clicking
-                <asp:Label ID="lblToFolderUrl" runat="server" Text="here"></asp:Label>
-                .</p>
+                The following sessions will be made public. <span class="publicTrue">Sessions that are already public are 
+                highlighted green</span>. <span class="publicFalse">Sessions that are not public are highlighted red</span>.</p>
             <p>
                 <asp:CheckBoxList ID="chklistSessions" runat="server">
                 </asp:CheckBoxList>
             </p>
             <p>
-                <asp:Button ID="btnConfirmMove" runat="server" onclick="btnConfirmMove_Click" Text="Confirm and move" />
+                <asp:Button ID="btnConfirmUpdate" runat="server" onclick="btnConfirmMove_Click" 
+                    Text="Confirm and update" />
             </p>
         </asp:View>
         <asp:View ID="View3" runat="server">

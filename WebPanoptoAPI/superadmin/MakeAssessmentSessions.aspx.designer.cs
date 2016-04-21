@@ -10,7 +10,7 @@
 namespace WebPanoptoAPI {
     
     
-    public partial class MoveAllSessionsToNewFolder {
+    public partial class MakeAssessmentSessions {
         
         /// <summary>
         /// MultiView1 control.
@@ -31,31 +31,49 @@ namespace WebPanoptoAPI {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// ddlMoveFrom control.
+        /// txtUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMoveFrom;
+        protected global::System.Web.UI.WebControls.TextBox txtUsers;
         
         /// <summary>
-        /// ddlMoveTo control.
+        /// txtAssessmentName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMoveTo;
+        protected global::System.Web.UI.WebControls.TextBox txtAssessmentName;
         
         /// <summary>
-        /// btnSelectFolders control.
+        /// txtCheckInter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelectFolders;
+        protected global::System.Web.UI.WebControls.TextBox txtCheckInter;
+        
+        /// <summary>
+        /// txtCheckUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCheckUser;
+        
+        /// <summary>
+        /// btnMakeFoldersSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMakeFoldersSubmit;
         
         /// <summary>
         /// View2 control.
@@ -67,57 +85,21 @@ namespace WebPanoptoAPI {
         protected global::System.Web.UI.WebControls.View View2;
         
         /// <summary>
-        /// lblToFolder control.
+        /// lblErrors control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToFolder;
+        protected global::System.Web.UI.WebControls.Label lblErrors;
         
         /// <summary>
-        /// lblToFolderUrl control.
+        /// lblSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblToFolderUrl;
-        
-        /// <summary>
-        /// chklistSessions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chklistSessions;
-        
-        /// <summary>
-        /// btnConfirmMove control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmMove;
-        
-        /// <summary>
-        /// View3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View View3;
-        
-        /// <summary>
-        /// lblMoveConfirmation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMoveConfirmation;
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
     }
 }

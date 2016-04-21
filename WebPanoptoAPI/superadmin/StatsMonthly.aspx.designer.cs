@@ -7,63 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPanoptoAPI {
+namespace WebPanoptoAPI.superadmin {
     
     
-    public partial class _Default {
+    public partial class MonthlyStats {
         
         /// <summary>
-        /// lblErrorStep1 control.
+        /// lblCurrentMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorStep1;
+        protected global::System.Web.UI.WebControls.Label lblCurrentMonth;
         
         /// <summary>
-        /// txtFqdn control.
+        /// lblMinutesViewed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFqdn;
+        protected global::System.Web.UI.WebControls.Label lblMinutesViewed;
         
         /// <summary>
-        /// txtApiUsername control.
+        /// lblHoursViewed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApiUsername;
+        protected global::System.Web.UI.WebControls.Label lblHoursViewed;
         
         /// <summary>
-        /// txtApiPassword control.
+        /// lblViews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApiPassword;
+        protected global::System.Web.UI.WebControls.Label lblViews;
         
         /// <summary>
-        /// btnSubmitFqdn control.
+        /// lblUniqueUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmitFqdn;
+        protected global::System.Web.UI.WebControls.Label lblUniqueUsers;
         
         /// <summary>
-        /// lblException control.
+        /// btnPreviousMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblException;
+        protected global::System.Web.UI.WebControls.Button btnPreviousMonth;
+        
+        /// <summary>
+        /// hiddenDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hiddenDate;
     }
 }

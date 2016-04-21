@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebPanoptoAPI {
+namespace WebPanoptoAPI.superadmin {
     
     
-    public partial class page2 {
+    public partial class UpdateUploadedFlashMetadata {
         
         /// <summary>
-        /// lblApiUsername control.
+        /// lblUpdated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApiUsername;
+        protected global::System.Web.UI.WebControls.Label lblUpdated;
         
         /// <summary>
-        /// lblApiSystemRole control.
+        /// lblNotUpdated control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblApiSystemRole;
+        protected global::System.Web.UI.WebControls.Label lblNotUpdated;
         
         /// <summary>
-        /// lblServername control.
+        /// btnReload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServername;
-        
-        /// <summary>
-        /// lblVersion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblVersion;
+        protected global::System.Web.UI.WebControls.Button btnReload;
     }
 }
