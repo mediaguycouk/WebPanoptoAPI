@@ -50,21 +50,15 @@
             <p>
                 This is how your new folder structure will look, but note that we only look at root folders (i.e. folders that have not been organised already). Ignored folders are shown at the end of the page.</p>
             <asp:Label ID="lblFolderStructure" runat="server"></asp:Label>
+            <h4>Ignored folders</h4>
+            <p>
+                <asp:Label ID="lblIgnoredFolders" runat="server"></asp:Label>
+            </p>
             <p>
                 <asp:Button ID="btnCommitChanges" runat="server" 
                     onclick="btnCommitChanges_Click" Text="Commit changes" />
             </p>
         </asp:View>
-        <asp:View ID="View3" runat="server">
-            <p>
-                New folders created.</p>
-            <p>
-                <asp:Label ID="lblSqlInstructions" runat="server" 
-                    Text="SQL code to update parent folders below"></asp:Label>
-            </p>
-            <p>
-                <asp:TextBox ID="txtUpdateCommand" runat="server" Columns="80" Rows="20" TextMode="MultiLine"></asp:TextBox>
-            </p>
-        </asp:View>
+        <asp:View ID="View3" runat="server">Changes committed</asp:View>
     </asp:MultiView>
 </asp:Content>

@@ -17,14 +17,9 @@ namespace WebPanoptoAPI.superadmin
         {
             try
             {
-                if ((string)Session["loggedin"] != "loggedin")
+                if ((string) Session["lastPage"] != "page2")
                 {
-                    Response.Redirect("Login.aspx", false);
-                }
-                string currentServer = Session["server"].ToString();
-                if (!currentServer.Contains("soton.ac.uk"))
-                {
-                    Response.Redirect("SouthamptonOnly.aspx", false);
+                    Response.Redirect("Default.aspx");
                 }
             }
             catch (Exception)
@@ -51,7 +46,7 @@ namespace WebPanoptoAPI.superadmin
                         MaxNumberResults = resultsPerPage,
                         PageNumber = page
                     };
-                    ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+                    ISessionManagement sessionMgr = new SessionManagementClient();
                     ListFoldersResponse response = sessionMgr.GetFoldersList(sessionAuthenticationInfo,
                         new ListFoldersRequest {Pagination = pagination, SortIncreasing = true}, null);
 

@@ -20,7 +20,7 @@ namespace WebPanoptoAPI
         {
             try
             {
-                if ((string)Session["loggedin"] != "loggedin")
+                if ((string)Session["lastPage"] != "page2")
                 {
                     Response.Redirect("Login.aspx");
                 }
@@ -104,8 +104,8 @@ namespace WebPanoptoAPI
                 Password = (string)Session["apiPassword"]
             };
 
-            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
-            IAccessManagement accessMgr = new AccessManagementClient("BasicHttpBinding_IAccessManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/AccessManagement.svc");
+            ISessionManagement sessionMgr = new SessionManagementClient();
+            IAccessManagement accessMgr = new AccessManagementClient();
             IUserManagement userMgr = new UserManagementClient();
 
             while (!lastPage)

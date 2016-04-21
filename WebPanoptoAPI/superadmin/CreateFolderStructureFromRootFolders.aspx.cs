@@ -19,17 +19,12 @@ namespace WebPanoptoAPI
         {
             try
             {
-                if ((string)Session["loggedin"] != "loggedin")
+                if ((string)Session["lastPage"] != "page2")
                 {
-                    Response.Redirect("Login.aspx", false);
-                }
-                string currentServer = Session["server"].ToString();
-                if (!currentServer.Contains("soton.ac.uk"))
-                {
-                    Response.Redirect("SouthamptonOnly.aspx", false);
+                    Response.Redirect("Login.aspx");
                 }
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 Response.Redirect("Default.aspx");
             }
@@ -61,8 +56,8 @@ namespace WebPanoptoAPI
             Dictionary<Guid, string> courseFoldersDictionary = new Dictionary<Guid, string>();
             Dictionary<Guid, string> notRootFoldersDictionary = new Dictionary<Guid, string>();
 
-            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
-            //IAccessManagement accessMgr = new AccessManagementClient("BasicHttpBinding_IAccessManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/AccessManagement.svc");
+            ISessionManagement sessionMgr = new SessionManagementClient();
+            //IAccessManagement accessMgr = new AccessManagementClient();
 
             while (!lastPage)
             {
@@ -136,7 +131,7 @@ namespace WebPanoptoAPI
                     {
                         if (!lastCourse.Equals(course))
                         {
-                            lblFolderStructure.Text += "<p class=\"existlevel2\">" + course + "</p>\r\n";
+                            lblFolderStructure.Text += "<p class=\"existlevel2\">" + allRootFoldersDictionary[key] + "</p>\r\n";
                         }
                     }
                     else
@@ -152,6 +147,11 @@ namespace WebPanoptoAPI
                     lblFolderStructure.Text += "<p class=\"existlevel3\">" + allRootFoldersDictionary[key] + "</p>\r\n";
 
                 }
+            }
+
+            foreach (var key in notRootFoldersDictionary.Keys)
+            {
+                lblIgnoredFolders.Text += "<p class=\"existlevel1\">" + notRootFoldersDictionary[key] + "</p>\r\n";
             }
 
             MultiView1.SetActiveView(View2);
@@ -181,8 +181,8 @@ namespace WebPanoptoAPI
             Dictionary<Guid, string> courseFoldersDictionary = new Dictionary<Guid, string>();
             Dictionary<Guid, string> notRootFoldersDictionary = new Dictionary<Guid, string>();
 
-            ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
-            IAccessManagement accessMgr = new AccessManagementClient("BasicHttpBinding_IAccessManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/AccessManagement.svc");
+            ISessionManagement sessionMgr = new SessionManagementClient();
+            IAccessManagement accessMgr = new AccessManagementClient();
 
             while (!lastPage)
             {
@@ -229,8 +229,6 @@ namespace WebPanoptoAPI
                     Guid subjectFolder = Guid.Empty;
                     Guid courseFolder = Guid.Empty;
 
-                    Server.ScriptTimeout = 300;
-
                     FolderAccessDetails folderAccessDetails = accessMgr.GetFolderAccessDetails(accessAuthInfo, key);
 
                     if (subjectFoldersDictionary.ContainsValue(subject))
@@ -249,7 +247,7 @@ namespace WebPanoptoAPI
                         try
                         {
                             accessMgr.GrantGroupAccessToFolder(accessAuthInfo, subjectFolder, creatorGroup,
-                                AccessRole.Viewer);
+                                AccessRole.Creator);
                         }
                         catch 
                         {
@@ -305,42 +303,7 @@ namespace WebPanoptoAPI
                         
                     }
 
-                    int versionMajor = 0;
-                    int versionMinor = 0;
-
-                    try
-                    {
-                        string version = (string)Session["version"];
-                        string[] versionStrings = version.Split('.');
-                        if (versionStrings.Length > 2)
-                        {
-                            versionMajor = Convert.ToInt32(versionStrings[0]);
-                            versionMinor = Convert.ToInt32(versionStrings[1]);
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        
-                    }
-
-                    if (versionMajor >= 4 && versionMinor >= 8)
-                    {
-                        sessionMgr.UpdateFolderParent(sessionAuthInfo, key, courseFolder);
-
-                        txtUpdateCommand.Visible = false;
-                        lblSqlInstructions.Visible = false;
-                    }
-                    else
-                    {
-                        txtUpdateCommand.Text += "UPDATE PanoptoDB_3.dbo.sessionGroup\r\n";
-                        txtUpdateCommand.Text += "SET [parentID] = '"+ courseFolder +"'\r\n";
-                        txtUpdateCommand.Text += "WHERE [publicID] = '"+ key +"'\r\n";
-                        txtUpdateCommand.Text += "GO\r\n";
-                    }
-
-                    
-
-                    
+                    sessionMgr.UpdateFolderParent(sessionAuthInfo, key, courseFolder);
 
                 }
             }

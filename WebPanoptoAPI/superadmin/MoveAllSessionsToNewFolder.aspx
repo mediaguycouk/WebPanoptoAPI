@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="View1" runat="server">
-            <p>Choose the folder to move the sessions from and the folder to move it to. You will be given
+            <p class="help">Choose the folder to move the sessions from and the folder to move it to. You will be given
             the oppotunity to check the folder is correct on the next page.</p>
             <table cellspacing="10">
                 <tr>
@@ -36,12 +36,12 @@
                 . You can check if this is the right destination folder by clicking
                 <asp:Label ID="lblToFolderUrl" runat="server" Text="here"></asp:Label>
                 .</p>
+            <ul>
+                <asp:Label ID="lblSessionList" runat="server"></asp:Label>
+            </ul>
             <p>
-                <asp:CheckBoxList ID="chklistSessions" runat="server">
-                </asp:CheckBoxList>
-            </p>
-            <p>
-                <asp:Button ID="btnConfirmMove" runat="server" onclick="btnConfirmMove_Click" Text="Confirm and move" />
+                <asp:Button ID="btnConfirmMove" runat="server" onclick="btnConfirmMove_Click" 
+                    Text="Confirm and move" />
             </p>
         </asp:View>
         <asp:View ID="View3" runat="server">

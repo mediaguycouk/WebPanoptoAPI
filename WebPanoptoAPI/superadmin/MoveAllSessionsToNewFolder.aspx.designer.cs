@@ -85,13 +85,13 @@ namespace WebPanoptoAPI {
         protected global::System.Web.UI.WebControls.Label lblToFolderUrl;
         
         /// <summary>
-        /// chklistSessions control.
+        /// lblSessionList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chklistSessions;
+        protected global::System.Web.UI.WebControls.Label lblSessionList;
         
         /// <summary>
         /// btnConfirmMove control.

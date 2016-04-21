@@ -14,10 +14,6 @@
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
         </div>
-        <div class="main">
-            <p>&nbsp;</p>
-            <p><a href="~/superadmin/Default.aspx" runat="server">Return to menu</a></p>
-        </div>
         <div class="clear">
         </div>
     </div>

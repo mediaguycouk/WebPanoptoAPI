@@ -14,7 +14,7 @@ namespace WebPanoptoAPI
         {
             try
             {
-                if ((string)Session["loggedin"] != "loggedin")
+                if ((string)Session["lastPage"] != "page1")
                 {
                     Response.Redirect("Login.aspx");
                 }
@@ -25,9 +25,9 @@ namespace WebPanoptoAPI
             }
             
             lblApiSystemRole.Text = Session["apiRole"].ToString();
-            lblApiUsername.Text = (string) Session["apiUsername"];
-            lblVersion.Text = (string) Session["version"];
-            lblServername.Text = (string) Session["server"];
+            lblApiUsername.Text = (string)Session["apiUsername"];
+
+            Session["lastPage"] = "page2";
 
         }
     }

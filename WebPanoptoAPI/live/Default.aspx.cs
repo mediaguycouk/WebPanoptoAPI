@@ -86,7 +86,7 @@ namespace WebPanoptoAPI.live
                     new PanoptoSessionManagement.Pagination { MaxNumberResults = resultsPerPage, PageNumber = page };
                 PanoptoSessionManagement.ListSessionsRequest request =
                     new PanoptoSessionManagement.ListSessionsRequest { Pagination = pagination, States = sessionStates };
-                ISessionManagement sessionMgr = new SessionManagementClient("BasicHttpBinding_ISessionManagement", "https://" + Session["server"] + "/Panopto/PublicAPISSL/4.6/SessionManagement.svc");
+                ISessionManagement sessionMgr = new SessionManagementClient();
                 ListSessionsResponse response = sessionMgr.GetSessionsList(sessionAuthInfo, request, null);
 
                 if (resultsPerPage*(page + 1) >= response.TotalNumberResults)

@@ -27,12 +27,12 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" />
-      <xsd:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V42.Soap" />
-      <xsd:import schemaLocation="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V40" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Panopto.Server.Services.PublicAPI.V42.Soap" />
+      <xsd:import schemaLocation="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IRemoteRecorderManagement_GetRemoteRecordersById_InputMessage">
@@ -176,7 +176,7 @@
   </wsdl:binding>
   <wsdl:service name="RemoteRecorderManagement">
     <wsdl:port name="BasicHttpBinding_IRemoteRecorderManagement" binding="tns:BasicHttpBinding_IRemoteRecorderManagement">
-      <soap:address location="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/RemoteRecorderManagement.svc" />
+      <soap:address location="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/RemoteRecorderManagement.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -18,14 +18,9 @@ namespace WebPanoptoAPI
         {
             try
             {
-                if ((string)Session["loggedin"] != "loggedin")
+                if ((string)Session["lastPage"] != "page2")
                 {
-                    Response.Redirect("Login.aspx", false);
-                }
-                string currentServer = Session["server"].ToString();
-                if (!currentServer.Contains("soton.ac.uk"))
-                {
-                    Response.Redirect("SouthamptonOnly.aspx", false);
+                    Response.Redirect("Login.aspx");
                 }
             }
             catch (Exception)
@@ -102,7 +97,7 @@ namespace WebPanoptoAPI
             bool view2Success = true;
             
             // set up domain context
-            PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "ldap.soton.ac.uk");
+            PrincipalContext ctx = new PrincipalContext(ContextType.Domain);
 
             // find the group in question
             GroupPrincipal group = GroupPrincipal.FindByIdentity(ctx, txtAdGroupName.Text);
@@ -122,7 +117,6 @@ namespace WebPanoptoAPI
             else
             {
                 lblAdCheck.Text = "AD Check fail: group does not exist";
-                lblMembershipProviderError.Text = "AD Check fail: group does not exist"; 
                 txtAdUserCheck.Visible = false;
                 btnAdCheckUserConfirm.Enabled = false;
                 view2Success = false;
@@ -156,10 +150,8 @@ namespace WebPanoptoAPI
 
         protected void btnAdCheckUserConfirm_Click(object sender, EventArgs e)
         {
-            Server.ScriptTimeout = 600;
-            
             // set up domain context
-            PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "ldap.soton.ac.uk");
+            PrincipalContext ctx = new PrincipalContext(ContextType.Domain);
 
             // find the group in question
             GroupPrincipal group = GroupPrincipal.FindByIdentity(ctx, txtAdGroupName.Text);
@@ -204,7 +196,9 @@ namespace WebPanoptoAPI
                                         LastName = theUser.Surname,
                                         SystemRole = SystemRole.None,
                                         UserBio = String.Empty,
-                                        Email = theUser.EmailAddress,
+                                        //DEBUG
+                                        Email = "panopto." + p.Name + "@mediaguy.co.uk",
+                                        //Email = theUser.EmailAddress,
                                         EmailSessionNotifications = false
                                     };
 
@@ -229,27 +223,10 @@ namespace WebPanoptoAPI
 
                     //userMgr.RemoveMembersFromInternalGroup(userAuthenticationInfo, panGroupGuid);
 
-                    int i = 0;
-                    int range = 100;
-                    lblAdSyncGroupProgress.Text += "There are " + userList.Count + " users to add to the group <br/>\r\n";
-
-                    while (i < userList.Count)
-                    {
-                        if (userList.Count - i < 100)
-                        {
-                            range = userList.Count - i;
-                        }
-                        else
-                        {
-                            range = 100;
-                        }
-
-                        userMgr.AddMembersToInternalGroup(userAuthenticationInfo, panGroup.Id, userList.GetRange(i, range).ToArray());
-                        lblAdSyncGroupProgress.Text += panGroup.Name + " (" + i +" - " + (i + range) +") was updated (id:" + panGroup.Id + ")<br/>\r\n";
-                        i = i + 100;
-                    }
+                    userMgr.AddMembersToInternalGroup(userAuthenticationInfo, panGroup.Id, userList.ToArray());
+                    lblAdSyncGroupProgress.Text += panGroup.Name + " was updated (id:" + panGroup.Id + ")<br/>\r\n";
                 }
-                catch (Exception exception)
+                catch (Exception)
                 {
                     // WARNING: There is currently an issue that causes internal groups to not show
                     // within the Panopto UI, unless made within the Panopto UI
@@ -260,10 +237,8 @@ namespace WebPanoptoAPI
                     //
                     //panGroup = userMgr.CreateInternalGroup(userAuth, panAdGroupName, userList.ToArray());
 
-                    lblAdSyncGroupProgress.Text +=
+                    lblAdSyncGroupProgress.Text =
                         "Nothing was updated. You must create the group within the Panopto UI first!";
-                    lblAdSyncGroupProgress.Text +=
-                        "<!--" + Server.HtmlEncode(exception.ToString()) + "-->";
                 }
             }
             MultiView1.SetActiveView(View4);

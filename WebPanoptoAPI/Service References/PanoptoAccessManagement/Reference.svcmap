@@ -18,14 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://srv00736.soton.ac.uk/Panopto/PublicAPI/4.6/AccessManagement.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPI/4.2/AccessManagement.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AccessManagement4.xsd" MetadataType="Schema" ID="8cb57c63-e62e-4e96-9029-fef1d880a742" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd2" />
-    <MetadataFile FileName="AccessManagement1.wsdl" MetadataType="Wsdl" ID="097c5408-2b13-400a-886f-d259d9801bfc" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPI/4.6/AccessManagement.svc?wsdl" />
-    <MetadataFile FileName="AccessManagement41.xsd" MetadataType="Schema" ID="97c1e367-27d2-4884-845b-d791580cd8ab" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd0" />
-    <MetadataFile FileName="AccessManagement42.xsd" MetadataType="Schema" ID="11e39d40-cc57-4f28-8645-329fa7f11817" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd1" />
-    <MetadataFile FileName="AccessManagement43.xsd" MetadataType="Schema" ID="a5f4e279-988f-45c0-92ab-12d831e76982" SourceId="1" SourceUrl="https://srv00736.soton.ac.uk/Panopto/PublicAPISSL/4.6/AccessManagement.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccessManagement.xsd" MetadataType="Schema" ID="e6a16152-483a-4c84-ac8d-18e23bf3dcb6" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccessManagement1.xsd" MetadataType="Schema" ID="a1fc0bb8-cd28-47f2-bd65-b1d8479e6e95" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="AccessManagement2.xsd" MetadataType="Schema" ID="6612a939-7177-4244-a7f0-6c63d7d34b46" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccessManagement3.xsd" MetadataType="Schema" ID="b2a0484b-162d-4917-ae8f-ea0cf6029799" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccessManagement.wsdl" MetadataType="Wsdl" ID="061dcd7a-846f-4f41-b873-ac36b4c1ba14" SourceId="1" SourceUrl="https://coursecast.devdomain.soton.ac.uk/Panopto/PublicAPI/4.2/AccessManagement.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

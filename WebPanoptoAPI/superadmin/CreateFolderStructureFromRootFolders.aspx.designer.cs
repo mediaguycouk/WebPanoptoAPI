@@ -58,6 +58,15 @@ namespace WebPanoptoAPI {
         protected global::System.Web.UI.WebControls.Label lblFolderStructure;
         
         /// <summary>
+        /// lblIgnoredFolders control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIgnoredFolders;
+        
+        /// <summary>
         /// btnCommitChanges control.
         /// </summary>
         /// <remarks>
@@ -74,23 +83,5 @@ namespace WebPanoptoAPI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View3;
-        
-        /// <summary>
-        /// lblSqlInstructions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSqlInstructions;
-        
-        /// <summary>
-        /// txtUpdateCommand control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUpdateCommand;
     }
 }
